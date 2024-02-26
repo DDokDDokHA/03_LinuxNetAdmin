@@ -1,0 +1,50 @@
+
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 29 15:18:47 2024
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/cs-root     /                       xfs     defaults        0 0
+UUID=0e6070e3-436e-4ff5-8df2-e4de26431234 /boot                   xfs     defaults        0 0
+/dev/mapper/cs-home     /home                   xfs     defaults        0 0
+/dev/mapper/cs-swap     none                    swap    defaults        0 0
+
+# LVM 
+#/dev/vg1/lv1            /lvm1                   ext4    defaults        1 2
+#/dev/vg1/lv2            /lvm2                   ext4    defaults        1 2
+#/dev/vg2/lv3            /lvm3                   ext4    defaults        1 2
+#/dev/vg2/lv4            /lvm4                   ext4    defaults        1 2
+#
+#
+# RAID 0
+# /dev/md0    /raid0      ext4    defaults    1   2 
+# /dev/md0 /raid1   ext4   defaults  1  2
+# /dev/md0 /raid5   ext4   defaults  1  2
+
+
+# /dev/md0	/raid0	ext4	defaults 1 2
+# /dev/md1	/raid1	ext4	defaults 1 2
+# /dev/md5	/raid5	ext4	defaults 1 2
+
+# SWAP Configuration
+# /swap/swapfile  none  swap   defaults 0 0
+# /dev/sdb1	none	swap	defaults 	0 0
+# /dev/cs/swap2	none	swap	defaults	0 0
+
+#
+# SMB Mount configuraion
+#
+#//192.168.10.202/samba_share	/mnt/share	cifs	credentials=/root/credentials/smb.txt	 0	0
+
+
+#
+# Stratis Volume configuration
+#
+UUID="b9f63b27-dd88-4af8-a103-2aa6b4191485"		/vo1	xfs		x-systemd.requires=stratisd.service 0 0
+
